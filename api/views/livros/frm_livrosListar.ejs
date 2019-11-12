@@ -1,0 +1,67 @@
+
+        <% include ../parcial/header.ejs %>
+
+        <nav class="menuPrincipal">
+            <h2 id="titulo">Listar Livros</h2>
+            <ul>
+                <li><a href="/">Login</a></li>                    
+                <li><a href="/index">Menu Principal</a></li>
+                <li><a href="#">Cadastrar Livros</a></li>                    
+                <li><a href="/livros/listarLivros">Listar Livros</a></li>
+                <li><a href="#">Autores</a></li> 
+                <li><a href="#">Editoras</a></li>                 
+            </ul>                
+        </nav>
+
+        <br>
+        <hr>
+        <section id="listarlivros">
+            <fieldset>
+                <legend> Registros Cadastrados </legend>
+                <table border="1" id="registros">
+                    <tr>
+                        <td>Código</td>
+                        <td>A/I</td>
+                        <td>Dt.Cadastro</td>                                                
+                        <td>Título</td>
+                        <td>Edição</td>                        
+                        <td>ISBN</td>
+                        <td>Ano</td>                                                
+                        <td>Autor</td>
+                        <td>Editora</td> 
+                        <th></th>
+                        <th><a class="btn btn-success btn-block" href="/livros/novo">Novo</a></th>
+                    </tr>
+                    
+                    <% for(i=0; i<livros.length; i++) { %>
+                        <tr>
+                            <td> <%= livros[i].liv_codigo %> </td>
+                            <td> <%= livros[i].liv_ativoinativo %> </td>
+                            <td> <%= livros[i].liv_dtcadastro %> </td>
+                            <td> <%= livros[i].liv_titulo %> </td>
+                            <td> <%= livros[i].liv_edicao %> </td>
+                            <td> <%= livros[i].liv_isbn %> </td>
+                            <td> <%= livros[i].liv_ano %> </td>
+                            <td> <%= livros[i].aut_apelido %> </td>
+                            <td> <%= livros[i].edt_nome %> </td>
+
+                            <td><a class="btn btn-primary btn-block" href=<%="/livros/editar/" + livros[i].liv_codigo%>>Consultar</a></td>
+                            <td><a class="btn btn-danger btn-block" href=<%="/livros/inativar/" + livros[i].liv_codigo%>>Inativar</a> </td>
+    
+                        </tr>         
+                    <% } %>
+                    
+                </table>
+            </fieldset>
+        </section>
+        
+
+        <% include ../parcial/footer.ejs %>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    </body>
+
+</html>

@@ -1,0 +1,33 @@
+
+.menuPrincipal ul li { 
+    display: inline; 
+    padding-left: 22px;
+
+}  
+
+.menuPrincipal ul li a{ 
+    color: rgb(255, 0, 221);
+    text-decoration:none;    
+}  
+
+.menuPrincipal ul li a:hover{ 
+    color: red;
+    font-size: 28px;
+
+}  
+
+.menuPrincipal {
+    font-size: 20px;
+    padding-left: 0px;
+
+    transition: 0.2s;
+    border: solid 1px black;
+}
+
+
+#titulo{
+    text-align: center;
+    font-size: 20px;
+    margin: 0px;
+    color: navy;
+}
